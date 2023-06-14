@@ -79,6 +79,10 @@ a {
     font-family: 'Comfortaa', cursive;
 }
 
+form input:hover {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px black;
+  }
+
 .button {
     width: 100px;
 	background: whitesmoke;
