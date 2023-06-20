@@ -19,7 +19,7 @@
                     <input type="text" placeholder="Email Address" name="emailaddress" id="li-email" required>
     
                     <label for="password"></label>
-                    <input type="text" placeholder="Password" name="password" id="li-password"required>
+                    <input type="password" placeholder="Password" name="password" id="li-password"required>
 
                     <div class="wrapper-for-a">
                         <a href="#">Forgot password?</a> 
@@ -28,7 +28,7 @@
                        
     
                     <!-- <button onclick="myFunction()" id="button">Login</button> -->
-                    <input type="submit" onclick="myFunction()" class="button" id="login-buton" value="Sign In">
+                    <input type="submit" onclick="logIn()" class="button" id="login-buton" value="Sign In">
     
                 </form>
             </div>
@@ -38,8 +38,9 @@
     
         <section class="signup-section section">
             <div class="signup-container container">
-                <form id="signup-form" class="form">
+                <form id="signup-form" class="form" >
                     <h2 class="title">Signup</h2>
+
     
                     <label for="fname"></label>
                     <input type="text" placeholder="First Name" name="firstname" id="si-fname"required>
@@ -51,11 +52,11 @@
                     <input type="text" placeholder="Email Address" name="emailaddress" id="si-email" required>
     
                     <label for="password"></label>
-                    <input type="text" placeholder="Password" name="password" id="si-password" required>
+                    <input type="password" placeholder="Password" name="password" id="si-password" required>
     
                     <!-- <button onclick="myFunction()" id="button">Sign Up</button> -->
 
-                    <input type="submit" onclick="myFunction()" class="button"  id="signup-buton" value="Sign Up">
+                    <input type="submit" class="button"  id="signup-buton" value="Sign Up" onsubmit="signUp(event)" >
     
                 </form>
             </div>
@@ -65,5 +66,27 @@
    
     
 </body>
-<script src="main.js"></script>
+
+<!-- <script type="module">
+    import { initializeApp,  } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"
+
+    
+
+const firebaseConfig = {
+      apiKey: "AIzaSyAXsetcdRknQStr93AccQye9ap1BUxocRg",
+      authDomain: "login-56eea.firebaseapp.com",
+      projectId: "login-56eea",
+      storageBucket: "login-56eea.appspot.com",
+      messagingSenderId: "118447917365",
+      appId: "1:118447917365:web:d37cff3368d9d4c42f247c"
+    };
+
+      Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+</script> -->
+<!-- 
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-databse.js"></script> -->
+<script src="v2/main.js" type="module">
+</script>
 </html>
