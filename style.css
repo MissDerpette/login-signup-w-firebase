@@ -7,8 +7,9 @@ html {
 }
 
 body {
-background-image: url("images/img5.png");
+background-image: url("https://img.freepik.com/free-psd/gradient-abstract-borders_23-2150602093.jpg?w=1060&t=st=1701938611~exp=1701939211~hmac=4ce432d16fe8d1b6479a056ad9bc4f5fd92e73385ebb2cfc0539e10e9b3d40df");
 background-size: cover;
+background-repeat: no-repeat;
 height: 100%;
 }
 
@@ -36,7 +37,7 @@ margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: antiquewhite;
+    color: #2C3E50;
 }
   .form input[type="password"],
   .form input[type="text"] {
@@ -54,7 +55,7 @@ margin: 10px;
 
 a {
     text-decoration: none;
-    color: whitesmoke;
+    color: #2C3E50;
     padding: 4px;
     margin: 2px;
 }
