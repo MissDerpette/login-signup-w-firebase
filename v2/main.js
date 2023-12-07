@@ -3,7 +3,7 @@ import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/9.15.
 import {
     getAuth,
     signInWithEmailAndPassword,
-    createUserWithEmailAndPassword
+    createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
   
 
@@ -31,21 +31,23 @@ import {
   var lastName = document.getElementById('si-lname')
   var email = document.getElementById('si-email')
   var password = document.getElementById('si-password')
+  var liEmail = document.getElementById('li-email')
+  var liPassword = document.getElementById('si-password')
 
-  function checkFirebaseConnection() {
-    // Check if Firebase app is already initialized
-    if (getApps().length === 0) {
-      initializeApp(firebaseConfig); // Initialize Firebase app
-    }
+  // function checkFirebaseConnection() {
+  //   // Check if Firebase app is already initialized
+  //   if (getApps().length === 0) {
+  //     initializeApp(firebaseConfig); // Initialize Firebase app
+  //   }
   
-    // Check the connection status
-    const isConnected = getApps()[0]?.INTERNAL?.token !== null;
+  //   // Check the connection status
+  //   const isConnected = getApps()[0]?.INTERNAL?.token !== null;
   
-    // Return the connection status
-    return isConnected;
-  }
+  //   // Return the connection status
+  //   return isConnected;
+  // }
   
-  alert('Logged in successfully!')
+  // alert('Connected to Firebase!')
 
 
   //making a function for storing data
@@ -61,13 +63,33 @@ window.signUp = function(e){
     // createUserWithEmailAndPassword()
 
     createUserWithEmailAndPassword(auth, obj.email, obj.password)
-    .then(function(success) {
+    .then(function(userCredential) {
         alert('Sign up succesful!')
+        const user = userCredential.user;
     })
     .catch(function(err) {
         alert("Error in " + err)
     })
     console.log(obj)
+    };
 
-};
-
+     // Getting all the objectsof HTML for Log In
+     liEmail = document.getElementById('li-email')
+     liPassword = document.getElementById('si-password')
+ 
+     function loginUser(email, password) {
+      firebase.auth().signInWithEmailAndPassword(liEmail, liPassword)
+        .then((userCredential) => {
+          // Login successful
+          const user = userCredential.user;
+          console.log(`Login successful for user: ${user.email}`);
+          // Add additional logic here as needed
+        })
+        .catch((error) => {
+          // Handle login errors
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error(`Login failed: ${errorCode} - ${errorMessage}`);
+        });
+    };
+ 

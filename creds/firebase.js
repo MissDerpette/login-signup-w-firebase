@@ -1,7 +1,7 @@
 
   //Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,13 +19,13 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
 
-  // Getting all the objectsof HTML
+  // Getting all the objectsof HTML for Sign Up
   firstName = document.getElementById('si-fname')
   lastName = document.getElementById('si-lname')
   email = document.getElementById('si-email')
   password = document.getElementById('si-password')
 
-  //makinga function for storing data
+  //making a function for storing data
 windows.signUp = function(e){
     e.preventDefault();
     let obj = {
